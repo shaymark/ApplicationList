@@ -7,36 +7,16 @@
     tools:context=".FirstFragment">
 
 
-    <EditText
-        android:id="@+id/filter"
-        android:layout_width="0dp"
-        android:padding="8dp"
+    <Button
+        android:id="@+id/application_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/filter_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/filter_image"
-        >
-
-    </EditText>
-
-    <ImageView
-        android:id="@+id/filter_image"
-        android:layout_height="40dp"
-        android:layout_width="40dp"
-        android:src = "@drawable/ic_apps_foreground"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/next"
-        app:layout_constraintTop_toBottomOf="@id/filter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="select application"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
