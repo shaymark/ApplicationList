@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,11 +41,20 @@ class FirstFragment : Fragment() {
             applicationBtn.setOnClickListener {
                 ApplicationDialog().show(parentFragmentManager, null)
             }
+
+            phoneBtn.setOnClickListener {
+                ChoosePhoneDialog().show(parentFragmentManager, null)
+            }
         }
 
         setFragmentResultListener(ApplicationDialog.APP_Request_Key) { requestKey, bundle ->
             val appInfo = ApplicationDialog.getResult(bundle)
             sendNotification(appInfo)
+        }
+
+        setFragmentResultListener(ChoosePhoneDialog.PHONE_Request_Key) { requestKey, bundle ->
+            val phoneInfo = ChoosePhoneDialog.getResult(bundle)
+            Log.d("OnViewCreate", "onViewCreated: ${phoneInfo.name} - ${phoneInfo.mobileNumber}")
         }
     }
 
